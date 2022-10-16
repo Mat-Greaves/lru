@@ -7,7 +7,7 @@ import (
 )
 
 // check cache validates the cache is in the expected state
-func checkCache[K comparable, V any](t *testing.T, c *cache[K, V], es ...entry[K, V]) {
+func checkCache[K comparable, V any](t *testing.T, c *Cache[K, V], es ...entry[K, V]) {
 	if l := len(es); c.Len() != l {
 		t.Errorf("c.Len() = %d, want %d", c.Len(), l)
 		return
